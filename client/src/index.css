@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #f5f1e6;
+  color: #181611;
+  font-family: -apple-system, Segoe UI, Inter, IBM Plex Sans, Roboto, sans-serif;
+}
+
+::selection {
+  background: #c97a2b;
+  color: white;
+}
+
+@theme {
+  --animate-floaty: floaty 6s ease-in-out infinite;
+  --animate-shimmer: shimmer 2.5s linear infinite;
+  --animate-fadeUp: fadeUp 0.7s ease-out both;
+  --animate-pulseSlow: pulseSlow 8s ease-in-out infinite;
+}
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-10px) scale(1.03); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseSlow {
+  0%, 100% { opacity: .45; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.bg-noise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .035;
+  z-index: 0;
+  background-image: radial-gradient(circle at 1px 1px, #000 1px, transparent 0);
+  background-size: 22px 22px;
+}
+
+.gridlines {
+  background-image:
+    linear-gradient(rgba(24,22,17,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(24,22,17,.045) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
