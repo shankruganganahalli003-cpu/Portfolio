@@ -18,7 +18,7 @@ export default function Education() {
               Education
             </h3>
             <p className="mb-1 font-semibold">Bachelor of Computer Applications (BCA)</p>
-            <p className="mb-1 text-inksoft">Pursuing, 4th Semester</p>
+            <p className="mb-1 text-inksoft">Pursuing, 5th Semester</p>
             <p className="text-inksoft">Expected Graduation: 2027</p>
           </div>
         </Reveal>
